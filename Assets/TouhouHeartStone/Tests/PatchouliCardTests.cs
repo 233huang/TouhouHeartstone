@@ -541,6 +541,23 @@ namespace Tests
 
             game.Dispose();
         }
+
+        [Test]
+        public void BiteTentacleTest()
+        {
+            TestGameflow.createGame(out var game, out var you, out var oppo,
+                new KeyValuePair<int, int>(DoyouSpear.ID, 3),
+                new KeyValuePair<int, int>(FloodElement.ID, 3)
+            );
+            game.skipTurnUntil(() => game.currentPlayer == you && you.gem >= 4);
+            game.logger.log("cost:" + you.hand.getCard<FloodElement>().getCost(game));
+            you.cmdUse(game, you.hand.getCard<FloodElement>(),0);
+            you.cmdTurnEnd(game);
+            oppo.cmdTurnEnd(game);
+            
+
+            game.Dispose();
+        }
     }
 }
 
