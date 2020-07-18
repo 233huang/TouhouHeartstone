@@ -18,7 +18,7 @@ namespace UI
                 UnityEditor.EditorApplication.isPlaying = false;
 #endif
             });
-            if (BuildInformation.Instance != null)
+            /*if (BuildInformation.Instance != null)
             {
                 if (Application.version.StartsWith("0."))
                     VersionText.text = "测试版本 ";
@@ -27,7 +27,7 @@ namespace UI
             else
             {
                 VersionText.text = "版本 " + Application.version;
-            }
+            }*/
         }
     }
 }
